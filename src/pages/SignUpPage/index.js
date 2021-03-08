@@ -1,34 +1,60 @@
 import React from 'react';
+import useUnprotectPage from '../../hooks/useUnprotectPage';
 import * as S from './styles'
+import { useForm } from '../../hooks/useForm';
+import { signUp } from '../../services/user';
+import { useHistory } from 'react-router-dom';
 
+function SignUpPage({setRightButtonText}) {
+    useUnprotectPage()
 
+    const { form, onChange, resetForm } = useForm ({name:"", email: "", password: "", nickname:""})
+    const history = useHistory()
 
-function SignUpPage() {
+    const handleInputChange = (event) => {
+        const { value, name } = event.target
+        onChange (value, name)
+    }
+
+    const handleSubmission = (event) => {
+        event.preventDefault()
+        signUp(form, history, setRightButtonText)
+        resetForm()
+    }
+
     return (
         <div>
 
                 <S.Container>
-                    <S.FormContainer>
+                    <S.FormContainer onSubmit={handleSubmission}>
                     <input
                         name="name"
+                        value= {form.name}
+                        onChange= {handleInputChange}
                         type="name"
                         placeholder="Nome"
                         required
                     />
                     <input
-                        name="name"
-                        type="name"
+                        name="nickname"
+                        value= {form.nickname}
+                        onChange= {handleInputChange}
+                        type="text"
                         placeholder="Nickname"
                         required
                     />
                     <input
                         name="email"
+                        value= {form.email}
+                        onChange= {handleInputChange}
                         type="email"
                         placeholder="E-mail"
                         required
                     />
                     <input
                         name="password"
+                        value= {form.password}
+                        onChange= {handleInputChange}
                         type="password"
                         placeholder="Senha"
                         required

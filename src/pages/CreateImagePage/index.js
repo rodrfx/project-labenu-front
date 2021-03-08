@@ -1,8 +1,11 @@
 import React from 'react';
+import useProtectPage from '../../hooks/useProtectPage';
 import * as S from './styles';
 
 
 function CreateImagePage() {
+    useProtectPage()
+
     return (
         <div>
              <div>

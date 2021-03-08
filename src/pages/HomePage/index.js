@@ -1,27 +1,32 @@
 import React from 'react';
-import NavBar from '../../components/NavBar/NavBar';
 import * as S from './styles';
-
+import useRequestData from '../../hooks/useRequestData';
+import { BASE_URL } from '../../constants/urls';
+import InfoCard from '../../components/InfoCard';
 
 
 function HomePage() {
+    const imageData= useRequestData([], `${BASE_URL}/image/all`)
+    // console.log(imageData[0])
+
+    const cardData = imageData[0].map((item)=>{
+        return (
+            <InfoCard 
+            key = {item.id}
+            title= {item.subtitle}
+            image= {item.file}
+            author= {item.author}
+            />
+            )
+        })
+
     return (
-        <>
-        <NavBar />
         
         <S.Container>
-            <img src= "https://picsum.photos/200/200" alt=""/>
-            <img src= "https://picsum.photos/200/200" alt=""/>
-            <img src= "https://picsum.photos/200/200" alt=""/>
-            <img src= "https://picsum.photos/200/200" alt=""/>
-            <img src= "https://picsum.photos/200/200" alt=""/>
-            <img src= "https://picsum.photos/200/200" alt=""/>
-            <img src= "https://picsum.photos/200/200" alt=""/>
-            <img src= "https://picsum.photos/200/200" alt=""/>
-            <img src= "https://picsum.photos/200/200" alt=""/>
-            <img src= "https://picsum.photos/200/200" alt=""/>
+              
+              {cardData}
+
         </S.Container>
-        </>
     )
 }
 
