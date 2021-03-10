@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 11vh;
+  min-height: 100px;
 
   background: blue;
     div{
@@ -11,6 +12,9 @@ export const Container = styled.div`
         margin: 10px;
         cursor: pointer;
     };
+    h3{
+        cursor: pointer;
+    }
 `;
 
 export const Title = styled.span`

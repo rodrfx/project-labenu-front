@@ -30,7 +30,7 @@ function NavBar({ rightButtonText, setRightButtonText }) {
                 <S.Title>
                     <h3 onClick={() => goToHomePage(history)}>LOGO</h3>
                     <div>
-                        <p>Explorar</p>
+                        <p onClick={() => goToHomePage(history)}>Explorar</p>
                         <p onClick={() => goToCreateImage(history)}>Fazer Upload</p>
 
                         <button onClick={rightButtonAction}>{rightButtonText}</button>

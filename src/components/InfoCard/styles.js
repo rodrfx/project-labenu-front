@@ -11,7 +11,11 @@ export const Container = styled.div`
     };
 
     img {
-        max-width: 200px;
+        max-width: 100%;
+        width: 15rem;
+        height: 15rem;
+        border-radius: 10px;
+        object-fit: cover;
     }
 `;
 
