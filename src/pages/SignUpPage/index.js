@@ -18,13 +18,10 @@ function SignUpPage({setRightButtonText}) {
 
     const handleSubmission = (event) => {
         event.preventDefault()
-        signUp(form, history, setRightButtonText)
-        resetForm()
+        signUp(form, history, setRightButtonText, resetForm)
     }
 
     return (
-        <div>
-
                 <S.Container>
                     <S.FormContainer onSubmit={handleSubmission}>
                     <input
@@ -62,9 +59,6 @@ function SignUpPage({setRightButtonText}) {
                     <button>Cadastrar</button>
                     </S.FormContainer>
                 </S.Container>
-
-
-        </div>
     )
 }
 

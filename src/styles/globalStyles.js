@@ -26,7 +26,6 @@ const GlobalStyle = createGlobalStyle`
     }
 }
     
-
 @media(max-width: 720px){
     html{
         font-size:87.5%
@@ -51,15 +50,15 @@ a{
     text-decoration: none;
 }
 
-/* .container{
-    height: 100vh;
-    max-width: 992px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem;
+input {
+        margin-bottom: 7px;
+        font-size: 1rem;
+        height: 2rem;
+        &::placeholder{
+            padding: 10px;
+        };
+}
 
-    display: flex;
-    flex-direction: column; */
-/* } */
-`
+`;
 
 export default GlobalStyle;

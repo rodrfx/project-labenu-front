@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: 85vw;
-    max-width: 200px;
+    width: 90vw;
+    max-width: 400px;
     margin: 50px auto;
 `;
 
@@ -14,9 +14,7 @@ export const FormContainer = styled.form`
     height: 11vh;
     justify-content: space-around;
     margin-bottom: 20px;
-    input{
-        ::placeholder{
-            padding: 10px;
-        }
+    button{
+        height: 2rem;
     }
 `;

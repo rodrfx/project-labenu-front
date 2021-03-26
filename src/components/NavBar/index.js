@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from "./styles"
 import { useHistory } from 'react-router-dom'
-import { goToCreateImage, goToHomePage, goToSignUpPage } from '../../Routes/coordinator';
+import { goToCreateImage, goToHomePage, goToLoginPage, goToSignUpPage } from '../../Routes/coordinator';
 
 
 function NavBar({ rightButtonText, setRightButtonText }) {
@@ -17,7 +17,7 @@ function NavBar({ rightButtonText, setRightButtonText }) {
         if (token) {
             logout()
             setRightButtonText("Cadastre-se")
-            goToHomePage(history)
+            goToLoginPage(history)
         } else {
             goToSignUpPage(history)
         }
@@ -37,9 +37,9 @@ function NavBar({ rightButtonText, setRightButtonText }) {
                     </div>
                 </S.Title>
 
-                <div>
+                {/* <div>
                     <S.Input placeholder="Pesquisar..." />
-                </div>
+                </div> */}
 
             </S.Container>
 

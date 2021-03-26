@@ -5,35 +5,34 @@ import { BASE_URL } from '../../constants/urls';
 import InfoCard from '../../components/InfoCard';
 import { goToDetailPage } from '../../Routes/coordinator';
 import { useHistory } from 'react-router-dom';  
+import useProtectPage from '../../hooks/useProtectPage';
 
 
 function HomePage() {
+    useProtectPage()
     const history = useHistory()
     const imageData= useRequestData([], `${BASE_URL}/image/all`)
-    // console.log(imageData[0])
+    const imageCard = imageData[0].images
+    // console.log(imageData[0].images)
 
     const onCLickCard = (id) => {
         goToDetailPage(history, id)
     }
     
-    const cardData = imageData[0].map((item)=>{
-        return (
-            <InfoCard
-            key = {item.id}
-            title= {item.subtitle}
-            image= {item.file}
-            author= {item.author}
-            onClickCard = {() => onCLickCard(item.id)}
-            />
-            )
-        })
-
-    return (
-        
+    return (    
         <S.Container>
-              
-              {cardData}
-
+             {imageCard &&
+             imageCard.map((image)=>{
+                 return(
+                     <InfoCard
+                        key={image.id} 
+                         title= {image.subtitle}
+                         image= {image.file}
+                         onClickCard = {() => onCLickCard(image.id)}
+                     />
+                 )
+             })
+             }
         </S.Container>
     )
 }

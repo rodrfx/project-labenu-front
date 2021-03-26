@@ -10,19 +10,21 @@ function DetailPage() {
   useProtectPage()
   const params = useParams()
   // console.log(params)
-  const imageData = useRequestData([], `${BASE_URL}/image/${params.id}`)[0]
-  console.log(imageData)
 
-  return (
-  
+  const imageData = useRequestData([], `${BASE_URL}/image/${params.id}`)
+  // console.log(imageData[0].imageId)
+  const imageInfo = imageData[0].imageId
+
+  return (  
     <S.Container>
       <S.Card>
-        {imageData && 
+        {imageInfo && 
         <S.Info>
-          <img src={imageData.file} alt={imageData.subtitle}/>
-          <h3>Local: {imageData.subtitle}</h3>
-          <p>Autor: {imageData.author}</p>
-          <p>Data: {imageData.date}</p>
+          <img src={imageInfo.file} alt={imageInfo.subtitle}/>
+          <h3>{imageInfo.subtitle}</h3>
+          <p>Autor: {imageInfo.author}</p>
+          <p>Data: {imageInfo.date}</p>
+          <p>Coleção: {imageInfo.collection}</p>
         </S.Info>
 
           

@@ -3,20 +3,22 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: 85vw;
-    max-width: 200px;
-    margin: 50px auto;
+    width: 90vw;
+    max-width: 400px;
+    margin: 20px auto;
+    h1{
+        margin-bottom: 10px
+    }
 `;
 
 export const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
-    height: 11vh;
-    justify-content: space-around;
     margin-bottom: 20px;
     input{
-        ::placeholder{
-            padding: 10px;
-        }
+        height: 2rem;
+    }
+    button{
+        height: 2rem;
     };
 `;
