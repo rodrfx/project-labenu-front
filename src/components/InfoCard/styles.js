@@ -5,7 +5,6 @@ export const Container = styled.div`
     transition: 0.3s;
     width: auto;
     margin: 10px;
-    
     &:hover{
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     };
@@ -16,6 +15,7 @@ export const Container = styled.div`
         height: 15rem;
         border-radius: 10px;
         object-fit: cover;
+        cursor: pointer;
     }
 `;
 

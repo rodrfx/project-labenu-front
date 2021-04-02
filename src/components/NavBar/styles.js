@@ -35,6 +35,15 @@ export const Container = styled.div`
         border-radius: 2px;
         color: #666666;
         font-weight: 600;
+
+    &:hover{
+        background-color: #5e5e5d;
+        color: white;
+    };
+   &:focus{
+        outline: none;
+    };
+
     };
 `;
 
@@ -44,4 +53,4 @@ export const Title = styled.span`
     justify-content: space-between;
     padding: 15px;
     margin: 0 10px;
-`; 
+`;
