@@ -2,12 +2,11 @@ import React from 'react';
 import * as S from "./styles"
 import { useHistory } from 'react-router-dom'
 import { goToCreateImage, goToHomePage, goToLoginPage, goToSignUpPage } from '../../Routes/coordinator';
-
+import logo from "../../assets/logo.png"
 
 function NavBar({ rightButtonText, setRightButtonText }) {
     const token = localStorage.getItem("token")
     const history = useHistory()
-
 
     const logout = () => {
         localStorage.removeItem("token")
@@ -23,27 +22,22 @@ function NavBar({ rightButtonText, setRightButtonText }) {
         }
     }
 
-
     return (
         <>
             <S.Container>
                 <S.Title>
-                    <h3 onClick={() => goToHomePage(history)}>LOGO</h3>
                     <div>
-                        <p onClick={() => goToHomePage(history)}>Explorar</p>
+                    <img onClick={() => goToHomePage(history)} src={logo} alt="logomarca"/>
+                    <h1 onClick={() => goToHomePage(history)}> Photo Wall</h1>
+                    </div>
+                    <div>
+                        <p onClick={() => goToLoginPage(history)}>Explorar</p>
                         <p onClick={() => goToCreateImage(history)}>Fazer Upload</p>
 
                         <button onClick={rightButtonAction}>{rightButtonText}</button>
                     </div>
                 </S.Title>
-
-                {/* <div>
-                    <S.Input placeholder="Pesquisar..." />
-                </div> */}
-
             </S.Container>
-
-
         </>
     )
 }

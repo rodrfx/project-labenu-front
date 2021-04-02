@@ -4,7 +4,6 @@ import * as S from './styles';
 function InfoCard(props) {
 
     return (
-
         <S.Container onClick= {props.onClickCard}>
             <img src={props.image} alt={props.title} />
             <S.Info>
@@ -12,7 +11,6 @@ function InfoCard(props) {
                 <p> {props.author} </p>
             </S.Info>
         </S.Container>
-
     )
 }
 

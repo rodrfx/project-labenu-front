@@ -6,6 +6,7 @@ import InfoCard from '../../components/InfoCard';
 import { goToDetailPage } from '../../Routes/coordinator';
 import { useHistory } from 'react-router-dom';  
 import useProtectPage from '../../hooks/useProtectPage';
+import Loading from '../../components/Loading';
 
 
 function HomePage() {
@@ -21,17 +22,19 @@ function HomePage() {
     
     return (    
         <S.Container>
-             {imageCard &&
+             {imageCard ?
              imageCard.map((image)=>{
                  return(
                      <InfoCard
-                        key={image.id} 
+                         key={image.id} 
                          title= {image.subtitle}
                          image= {image.file}
                          onClickCard = {() => onCLickCard(image.id)}
                      />
                  )
              })
+             :
+             <Loading />
              }
         </S.Container>
     )

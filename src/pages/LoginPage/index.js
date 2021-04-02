@@ -4,8 +4,11 @@ import { useForm } from '../../hooks/useForm';
 import { useHistory } from 'react-router-dom';
 import { goToSignUpPage } from '../../Routes/coordinator'
 import { login } from '../../services/user'
+import logo from "../../assets/logo.png"
+import useUnprotectPage from '../../hooks/useUnprotectPage';
 
 function LoginPage({ setRightButtonText }) {
+    useUnprotectPage()
     const { form, onChange, resetForm } = useForm({ email: "", password: "" })
     const [isLoading, setIsLoading] = useState(false)
     const history = useHistory()
@@ -17,12 +20,14 @@ function LoginPage({ setRightButtonText }) {
 
     const handleSubmission = (event) => {
         event.preventDefault()
-        login(form, history, setRightButtonText,resetForm)
+        login(form, history, setRightButtonText,resetForm, setIsLoading)
     }
 
     return (
         <div>
             <S.Container>
+                <img src={logo} alt="Logomarca"/>
+                <h1>Acesse sua conta</h1>
                 <S.FormContainer onSubmit={handleSubmission} >
                     <input
                         name="email"
@@ -40,13 +45,14 @@ function LoginPage({ setRightButtonText }) {
                         placeholder="Senha"
                         required
                     />
-                    <button> {isLoading ? </> : <>Entrar</>} </button>
+                    <button>
+                        {isLoading ? <>Carregando...</> : <> Entrar </>}
+                    </button>
                 </S.FormContainer>
 
-                <button onClick={() => goToSignUpPage(history)} >
+                <S.ButtonSignup onClick={() => goToSignUpPage(history)} >
                      Não possui conta? Cadastre-se
-                </button>
-
+                </S.ButtonSignup>
 
             </S.Container>
         </div>

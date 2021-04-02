@@ -5,7 +5,17 @@ export const Container = styled.div`
     flex-direction: column;
     width: 90vw;
     max-width: 400px;
-    margin: 50px auto;
+    margin: 20px auto;
+        h1{
+        font-size: 3rem;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    };
+    img{
+        width: 70px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    };
 `;
 
 export const FormContainer = styled.form`

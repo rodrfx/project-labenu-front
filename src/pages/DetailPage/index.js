@@ -4,6 +4,7 @@ import * as S from './styles';
 import { useParams } from 'react-router-dom';
 import useRequestData from '../../hooks/useRequestData';
 import { BASE_URL } from '../../constants/urls';
+import Loading from '../../components/Loading';
 
 
 function DetailPage() {
@@ -18,16 +19,16 @@ function DetailPage() {
   return (  
     <S.Container>
       <S.Card>
-        {imageInfo && 
+        {imageInfo ?
         <S.Info>
-          <img src={imageInfo.file} alt={imageInfo.subtitle}/>
+          <S.CardImage src={imageInfo.file} alt={imageInfo.subtitle}/>
           <h3>{imageInfo.subtitle}</h3>
           <p>Autor: {imageInfo.author}</p>
           <p>Data: {imageInfo.date}</p>
           <p>Coleção: {imageInfo.collection}</p>
         </S.Info>
-
-          
+          :
+          <Loading />
           }
       </S.Card>
     </S.Container>

@@ -4,7 +4,6 @@ import Router from './Routes/router';
 import { BrowserRouter } from "react-router-dom";
 import NavBar from "./components/NavBar";
 
-
 function App() {
   const token = localStorage.getItem("token")
   const [rightButtonText, setRightButtonText] = useState (token ? "logout": "Cadastre-se")

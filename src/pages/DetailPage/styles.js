@@ -10,14 +10,14 @@ export const Container = styled.div`
 export const Card = styled.div`
     width: auto;
     margin: 10px;
+`;
 
-    img {
-        max-width: 100%;
-        width: 25rem;
-        height: 25rem;
-        object-fit: cover;
-        border-radius: 10px;
-    };
+export const CardImage = styled.img`
+    max-width: 100%;
+    width: 25rem;
+    height: 25rem;
+    object-fit: cover;
+    border-radius: 10px;
 `;
 
 export const Info = styled.div`

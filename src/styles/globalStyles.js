@@ -7,12 +7,17 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
+body{
+    background: var( --white);
+    color: var(--text);
+}
+
 :root{
 	--white: #fff;
 	--background: #F2F3F5;
 	--gray-line: #DCDDE0;
 	--text: #666666;
-	--text-highlight: #B3B9FF;
+	--text-highlight: #B3B9FF; 
 	--title: #2E384D;
 	--red: #E83F5B;
 	--green: #4CD62B; 
@@ -32,10 +37,7 @@ const GlobalStyle = createGlobalStyle`
     }
 }
 
-body{
-    background: var( --background);
-    color: var(--text);
-}
+
 
 /* body, input, textarea, button {
     font: 400 16px "Inter", sans-serif;
@@ -51,14 +53,11 @@ a{
 }
 
 input {
-        margin-bottom: 7px;
+        margin-bottom: 15px;
         font-size: 1rem;
         height: 2rem;
-        &::placeholder{
-            padding: 10px;
-        };
-}
-
+        padding: 15px
+};
 `;
 
 export default GlobalStyle;

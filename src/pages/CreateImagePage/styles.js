@@ -7,8 +7,15 @@ export const Container = styled.div`
     max-width: 400px;
     margin: 20px auto;
     h1{
-        margin-bottom: 10px
-    }
+        font-size: 3rem;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    };
+    img{
+        width: 70px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    };
 `;
 
 export const FormContainer = styled.form`
@@ -19,6 +26,7 @@ export const FormContainer = styled.form`
         height: 2rem;
     }
     button{
-        height: 2rem;
-    };
+        padding: 5px 0;
+        font-size: 18px;
+        }
 `;

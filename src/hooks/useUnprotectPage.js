@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { goToCreateImage } from '../Routes/coordinator';
+import { goToHomePage } from '../Routes/coordinator';
 
 
 function useUnprotectPage() {
@@ -12,13 +12,9 @@ useEffect(() => {
 const token = window.localStorage.getItem("token")
 
 if (token) {
-
-goToCreateImage (history)
-
+goToHomePage (history)
 }
-
 }, [history]);
-
 }
 
 export default useUnprotectPage;

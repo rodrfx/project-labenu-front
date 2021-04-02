@@ -4,9 +4,8 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
- 
+  margin-top: 20px;
   img{
     margin: 20px;
-    
   }
 `;

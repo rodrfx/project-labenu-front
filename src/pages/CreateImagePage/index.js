@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from '../../hooks/useForm';
 import useProtectPage from '../../hooks/useProtectPage';
 import * as S from './styles';
 import { createImage } from '../../services/image'
 import { useHistory } from 'react-router';
+import logo from '../../assets/logo.png'
 
 function CreateImagePage() {
     useProtectPage()
+    const { form, onChange, resetForm } = useForm({ subtitle: "", author: "", file: "", collection: "", tags: "" })
+    const [isLoading, setIsLoading] = useState(false)
     const history = useHistory()
-    const { form, onChange, resetForm } = useForm({ subtitle: "", author: "", date: "", file: "", collection: "", tags: [""] })
 
     const handleInputChange = (event) => {
         const { value, name } = event.target
@@ -17,15 +19,14 @@ function CreateImagePage() {
 
     const handleSubmission = (event) => {
         event.preventDefault()
-        createImage(form, resetForm, history)
-        console.log(form)
+        createImage(form, resetForm, history, setIsLoading)
+        // console.log(form)
     }
 
     return (
-        <div>
-            <div>
                 <S.Container>
-                    <h1> Adicionar nova imagem</h1>
+                    <img src={logo} alt="logomarca"/>
+                    <h1>Cadastrar imagem</h1>
                     <S.FormContainer onSubmit={handleSubmission}>
                         <input
                             name="subtitle"
@@ -41,14 +42,6 @@ function CreateImagePage() {
                             onChange={handleInputChange}
                             type="text"
                             placeholder="Autor"
-                            required
-                        />
-                        <input
-                            name="date"
-                            value={form.date}
-                            onChange={handleInputChange}
-                            type="date"
-                            placeholder="Data"
                             required
                         />
                         <input
@@ -75,12 +68,12 @@ function CreateImagePage() {
                             placeholder="Tags"
                             required
                         />
-                        <button>Enviar</button>
+                        <button>
+                            {isLoading ? <>Carregando...</> : <>Enviar</>}
+                        </button>
                     </S.FormContainer>
 
                 </S.Container>
-            </div>
-        </div>
     )
 }
 
