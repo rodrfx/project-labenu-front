@@ -24,5 +24,10 @@ export const FormContainer = styled.form`
     margin-bottom: 20px;
     button{
         height: 2rem;
+        font-size: 18px;
+        &:hover{
+                 background-color: #5e5e5d;
+                 color: white;
+            }
     }
 `;

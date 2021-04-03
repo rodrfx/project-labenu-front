@@ -6,7 +6,6 @@ import useRequestData from '../../hooks/useRequestData';
 import { BASE_URL } from '../../constants/urls';
 import Loading from '../../components/Loading';
 
-
 function DetailPage() {
   useProtectPage()
   const params = useParams()
@@ -16,23 +15,25 @@ function DetailPage() {
   // console.log(imageData[0].imageId)
   const imageInfo = imageData[0].imageId
 
-  return (  
+  return (
     <S.Container>
       <S.Card>
         {imageInfo ?
-        <S.Info>
-          <S.CardImage src={imageInfo.file} alt={imageInfo.subtitle}/>
-          <h3>{imageInfo.subtitle}</h3>
-          <p>Autor: {imageInfo.author}</p>
-          <p>Data: {imageInfo.date}</p>
-          <p>Coleção: {imageInfo.collection}</p>
-        </S.Info>
+          <S.Info>
+            <S.CardImage
+              src={imageInfo.file} alt={imageInfo.subtitle}
+            />
+            <h3>{imageInfo.subtitle}</h3>
+            <p>Autor: {imageInfo.author}</p>
+            <p>Data: {imageInfo.date}</p>
+            <p>Coleção: {imageInfo.collection}</p>
+          </S.Info>
           :
           <Loading />
-          }
+        }
       </S.Card>
     </S.Container>
-  
+
   )
 }
 

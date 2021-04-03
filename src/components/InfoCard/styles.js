@@ -23,6 +23,3 @@ export const Info = styled.div`
      padding: 0 10%;
      padding-bottom: 10px;
 `;
-
-
-

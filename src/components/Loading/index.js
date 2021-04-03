@@ -3,10 +3,10 @@ import * as S from './styles'
 import Logo from '../../assets/logo.png';
 
 function Loading() {
-  return(
-      <S.Rotate>
-          <S.Image src={Logo} alt="logomarca"/>
-      </S.Rotate>
+  return (
+    <S.Rotate>
+      <S.Image src={Logo} alt="logomarca" />
+    </S.Rotate>
   )
 }
 

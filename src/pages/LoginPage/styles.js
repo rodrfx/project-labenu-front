@@ -7,7 +7,7 @@ export const Container = styled.div`
     max-width: 400px;
     margin: 20px auto;
     h1{
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin: 0 auto;
         margin-bottom: 5rem;
     };
@@ -17,7 +17,6 @@ export const Container = styled.div`
         margin-bottom: 10px;
     };
 `;
-
 
 export const FormContainer = styled.form`
     display: flex;
@@ -29,7 +28,11 @@ export const FormContainer = styled.form`
             padding: 5px 0;
             margin-bottom: 60px;
             font-size: 18px;
-        }
+            &:hover{
+                 background-color: #5e5e5d;
+                 color: white;
+            }
+        };
 `;
 
 export const ButtonSignup = styled.button`

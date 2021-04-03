@@ -6,10 +6,10 @@ const useRequestData = (initialData, url) => {
 
   useEffect(() => {
     axios
-      .get(url , {
-          headers: {
-              authorization: localStorage.getItem('token')
-          }
+      .get(url, {
+        headers: {
+          authorization: localStorage.getItem('token')
+        }
       })
       .then((response) => {
         setData(response.data);

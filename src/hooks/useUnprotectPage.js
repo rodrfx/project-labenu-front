@@ -5,16 +5,16 @@ import { goToHomePage } from '../Routes/coordinator';
 
 function useUnprotectPage() {
 
-const history = useHistory()
+    const history = useHistory()
 
-useEffect(() => {
+    useEffect(() => {
 
-const token = window.localStorage.getItem("token")
+        const token = window.localStorage.getItem("token")
 
-if (token) {
-goToHomePage (history)
-}
-}, [history]);
+        if (token) {
+            goToHomePage(history)
+        }
+    }, [history]);
 }
 
 export default useUnprotectPage;

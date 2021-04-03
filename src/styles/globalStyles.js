@@ -8,21 +8,14 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body{
-    background: var( --white);
+    background: var( --background);
     color: var(--text);
 }
 
 :root{
 	--white: #fff;
 	--background: #F2F3F5;
-	--gray-line: #DCDDE0;
 	--text: #666666;
-	--text-highlight: #B3B9FF; 
-	--title: #2E384D;
-	--red: #E83F5B;
-	--green: #4CD62B; 
-	--blue: #5965E0;
-	--blue-dark: #4953B8;
 }
 
 @media(max-width: 1080px){
@@ -37,11 +30,9 @@ body{
     }
 }
 
-
-
-/* body, input, textarea, button {
-    font: 400 16px "Inter", sans-serif;
-} */
+body, input, textarea, button {
+   font-family: 'Roboto', sans-serif;
+}
 
 button{
     cursor: pointer

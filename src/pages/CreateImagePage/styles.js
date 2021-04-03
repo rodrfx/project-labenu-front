@@ -28,5 +28,9 @@ export const FormContainer = styled.form`
     button{
         padding: 5px 0;
         font-size: 18px;
-        }
+        &:hover{
+                 background-color: #5e5e5d;
+                 color: white;
+            }
+    }
 `;

@@ -20,13 +20,13 @@ function LoginPage({ setRightButtonText }) {
 
     const handleSubmission = (event) => {
         event.preventDefault()
-        login(form, history, setRightButtonText,resetForm, setIsLoading)
+        login(form, history, setRightButtonText, resetForm, setIsLoading)
     }
 
     return (
         <div>
             <S.Container>
-                <img src={logo} alt="Logomarca"/>
+                <img src={logo} alt="Logomarca" />
                 <h1>Acesse sua conta</h1>
                 <S.FormContainer onSubmit={handleSubmission} >
                     <input
@@ -51,7 +51,7 @@ function LoginPage({ setRightButtonText }) {
                 </S.FormContainer>
 
                 <S.ButtonSignup onClick={() => goToSignUpPage(history)} >
-                     Não possui conta? Cadastre-se
+                    Não possui conta? Cadastre-se
                 </S.ButtonSignup>
 
             </S.Container>

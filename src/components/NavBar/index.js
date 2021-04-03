@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from "./styles"
 import { useHistory } from 'react-router-dom'
-import { goToCreateImage, goToHomePage, goToLoginPage, goToSignUpPage } from '../../Routes/coordinator';
+import { goToCreateImage, goToLoginPage, goToSignUpPage } from '../../Routes/coordinator';
 import logo from "../../assets/logo.png"
 
 function NavBar({ rightButtonText, setRightButtonText }) {
@@ -27,8 +27,8 @@ function NavBar({ rightButtonText, setRightButtonText }) {
             <S.Container>
                 <S.Title>
                     <div>
-                    <img onClick={() => goToHomePage(history)} src={logo} alt="logomarca"/>
-                    <h1 onClick={() => goToHomePage(history)}> Photo Wall</h1>
+                        <img onClick={() => goToLoginPage(history)} src={logo} alt="logomarca" />
+                        <h1 onClick={() => goToLoginPage(history)}> Photo Wall</h1>
                     </div>
                     <div>
                         <p onClick={() => goToLoginPage(history)}>Explorar</p>

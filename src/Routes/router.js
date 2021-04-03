@@ -7,15 +7,15 @@ import SignUpPage from "../pages/SignUpPage";
 import CreateImagePage from "../pages/CreateImagePage";
 import DetailPage from "../pages/DetailPage";
 
-
 export default function Router({setRightButtonText}) {
   return (
       <Switch>
         <Route exact path={"/"}>
-          <HomePage />
+        <LoginPage setRightButtonText={setRightButtonText} />
         </Route>
-        <Route exact path="/login">
-          <LoginPage setRightButtonText={setRightButtonText} />
+        <Route exact path="/home">
+          
+          <HomePage />
         </Route>
         <Route exact path="/cadastro">
           <SignUpPage setRightButtonText={setRightButtonText} />
