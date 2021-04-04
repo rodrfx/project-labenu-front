@@ -28,6 +28,6 @@ export const FormContainer = styled.form`
         &:hover{
                  background-color: #5e5e5d;
                  color: white;
-            }
-    }
+            };
+    };
 `;

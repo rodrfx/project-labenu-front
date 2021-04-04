@@ -21,8 +21,8 @@ export const Container = styled.div`
 export const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
-    height: 11vh;
     justify-content: space-around;
+    height: 11vh;
     margin-bottom: 60px;
         button{
             padding: 5px 0;
@@ -31,7 +31,7 @@ export const FormContainer = styled.form`
             &:hover{
                  background-color: #5e5e5d;
                  color: white;
-            }
+            };
         };
 `;
 

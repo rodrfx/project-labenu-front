@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   height: 11vh;
   min-height: 90px;
+  max-height: 100px;
   border-bottom: 1px solid #5e5e5d;
     div{
         display: flex;
@@ -13,7 +14,7 @@ export const Container = styled.div`
         font-weight: 600;
         margin: 20px;
         cursor: pointer;
-        :hover{
+        &:hover{
             color: #5497fb;
         }
     };
@@ -36,7 +37,6 @@ export const Container = styled.div`
         background-color: #d9d9d9;
         color: #666666;
         font-weight: 600;
-
     &:hover{
         background-color: #5e5e5d;
         color: white;
@@ -53,5 +53,5 @@ export const Title = styled.span`
     align-items: center;
     justify-content: space-between;
     padding: 15px;
-    margin: 0 10px;
+    margin: 0 5vw;
 `;
